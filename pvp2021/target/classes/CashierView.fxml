@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import java.lang.String?>
+<AnchorPane id="AnchorPane" prefHeight="606.0" prefWidth="933" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="frontend.controllers.CashierController">
+    <children>
+        <ComboBox fx:id="searchBySelection" layoutX="741.0" layoutY="62.0" prefHeight="25.0" prefWidth="119.0">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="Name" />
+                    <String fx:value="Barcode" />
+                    <String fx:value="Keyword" />
+                </FXCollections>
+            </items>
+            <value>
+                <String fx:value="Name"/>
+            </value>
+        </ComboBox>
+        <ComboBox fx:id="itemSelection" onAction="#onItemSelected" layoutX="528.0" layoutY="95.0" prefHeight="25.0" prefWidth="144.0" />
+        <TextField fx:id="itemSearchTerm" layoutX="528.0" layoutY="62.0" prefHeight="25.0" prefWidth="144.0" />
+        <TextField fx:id="quantityField" layoutX="714.0" layoutY="95.0" prefHeight="25.0" prefWidth="62.0" />
+        <TextField fx:id="priceField" layoutX="821.0" layoutY="95.0" prefHeight="25.0" prefWidth="70.0" />
+        <Label layoutX="538.0" layoutY="32.0" text="Add Items to Cart" />
+        <Label layoutX="453.0" layoutY="66.0" text="Search Item:" />
+        <Label layoutX="681.0" layoutY="66.0" text="Search By:" />
+        <Label layoutX="453.0" layoutY="99.0" text="Select Item:" />
+        <Label layoutX="681.0" layoutY="99.0" text="Qty:" />
+        <Label layoutX="785.0" layoutY="99.0" text="Price" />
+        <Label layoutX="454.0" layoutY="445.0" text="Total Sum:" />
+        <Label fx:id="totalsum" layoutX="525.0" layoutY="445.0" text="0  €" />
+        <Button layoutX="863.0" layoutY="62.0" mnemonicParsing="false" onAction="#searchForItems" text="✔" />
+        <Button layoutX="702.0" layoutY="128.0" mnemonicParsing="false" onAction="#addToCart" prefHeight="25.0" prefWidth="190.0" text="Add to Cart" />
+        <Button layoutX="700.0" layoutY="416.0" mnemonicParsing="false" onAction="#removeItemFromCart" prefHeight="47.0" prefWidth="190.0" text="Remove Selected Item From Cart" />
+        <Button layoutX="453.0" layoutY="506.0" mnemonicParsing="false" onAction="#payForItems" prefHeight="80.0" prefWidth="439.0" text="Pay">
+         <font>
+            <Font size="25.0" />
+         </font></Button>
+        <TableView fx:id="shoppingCart" layoutX="453.0" layoutY="170.0" prefHeight="228.0" prefWidth="439.0">
+            <columns>
+                <TableColumn fx:id="itemName" prefWidth="271.0" text="Item" />
+                <TableColumn fx:id="itemQuantity" prefWidth="85.0" text="Qty" />
+                <TableColumn fx:id="itemPrice" prefWidth="82.0" text="€" />
+            </columns>
+        </TableView>
+        <ImageView fitHeight="230.0" fitWidth="320.0" layoutX="65.0" layoutY="53.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="https://i.imgur.com/eFfmdb3h.jpg" />
+            </image>
+        </ImageView>
+      <Label layoutX="62.0" layoutY="324.0" prefHeight="25.0" prefWidth="176.0" text="Save shopping basket" />
+      <TextField fx:id="stashName" layoutX="56.0" layoutY="349.0" prefHeight="35.0" prefWidth="137.0" promptText="Insert name" />
+      <Button layoutX="78.0" layoutY="398.0" mnemonicParsing="false" onAction="#stashSale" prefHeight="61.0" prefWidth="94.0" text="Save" />
+      <ComboBox fx:id="chooseStash" layoutX="202.0" layoutY="349.0" prefHeight="35.0" prefWidth="155.0" />
+      <Label layoutX="216.0" layoutY="328.0" prefHeight="17.0" prefWidth="150.0" text="Choose existing basket" />
+      <Button layoutX="233.0" layoutY="398.0" mnemonicParsing="false" onAction="#unstashSale" prefHeight="61.0" prefWidth="94.0" text="Choose" />
+      <TextField fx:id="payedWithCash" layoutX="535.0" layoutY="472.0" prefHeight="25.0" prefWidth="70.0" promptText="0" text="0" />
+      <Label layoutX="454.0" layoutY="476.0" text="Pay with cash:" />
+      <Label layoutX="608.0" layoutY="476.0" text="€" />
+      <Label fx:id="transactionMessage" layoutX="454.0" layoutY="405.0" prefHeight="35.0" prefWidth="227.0">
+         <font>
+            <Font size="16.0" />
+         </font></Label>
+      <Label fx:id="ReturnCashMessage" layoutX="700.0" layoutY="476.0" prefHeight="17.0" prefWidth="190.0" text="Return to customer: 0 €" />
+      <Label layoutX="453.0" layoutY="132.0" text="Discount:" />
+      <TextField fx:id="discountAmount" layoutX="528.0" layoutY="128.0" prefHeight="25.0" prefWidth="50.0" promptText="0" text="0" />
+      <Label layoutX="585.0" layoutY="132.0" text="\%" />
+    </children>
+</AnchorPane>

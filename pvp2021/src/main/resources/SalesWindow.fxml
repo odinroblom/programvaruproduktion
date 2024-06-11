@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="503.0" prefWidth="622.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="frontend.controllers.SalesController">
+    <children>
+        <Label layoutX="22.0" layoutY="65.0" text="From Date:" />
+        <TextField fx:id="date" layoutX="93.0" layoutY="61.0" />
+        <Label layoutX="345.0" layoutY="65.0" text="Search Item:" />
+        <TextField fx:id="itemSearchTerm" layoutX="418.0" layoutY="61.0" prefHeight="25.0" prefWidth="144.0" />
+        <Label layoutX="345.0" layoutY="97.0" text="Search By:" />
+        <ComboBox fx:id="searchBySelection" layoutX="418.0" layoutY="93.0" prefHeight="25.0" prefWidth="144.0">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="Name" />
+                    <String fx:value="Barcode" />
+                    <String fx:value="Keyword" />
+                </FXCollections>
+            </items>
+            <value>
+                <String fx:value="Name" />
+            </value>
+        </ComboBox>
+        <Button layoutX="572.0" layoutY="93.0" mnemonicParsing="false" onAction="#searchForItems" text="✔" />
+        <Label layoutX="488.0" layoutY="139.0" text="Select Item:" />
+        <TableView fx:id="priceTable" layoutX="345.0" layoutY="126.0" prefHeight="365.0" prefWidth="256.0">
+            <columns>
+                <TableColumn fx:id="productName" prefWidth="85.0" text="Name" />
+                <TableColumn fx:id="productBarCode" prefWidth="85.0" text="Barcode" />
+                <TableColumn fx:id="productPrice" prefWidth="85.0" text="Price" />
+            </columns>
+        </TableView>
+      <Button onAction="#searchForSoldItems" layoutX="250.0" layoutY="61.0" mnemonicParsing="false" text="✔" />
+      <TableView fx:id="itemsSoldTable" layoutX="22.0" layoutY="101.0" prefHeight="392.0" prefWidth="256.0">
+         <columns>
+            <TableColumn fx:id="soldProductBarCode" prefWidth="85.0" text="Barcode" />
+            <TableColumn fx:id="soldProductQty" prefWidth="85.0" text="Qty Sold" />
+         </columns>
+      </TableView>
+      <Label layoutX="34.0" layoutY="14.0" text="Amount of items sold per product, per date" />
+      <Label layoutX="390.0" layoutY="14.0" text="Set/ Change price for products" />
+      <Separator layoutX="304.0" layoutY="-1.0" orientation="VERTICAL" prefHeight="508.0" prefWidth="18.0" />
+      <Separator layoutY="43.0" prefHeight="5.0" prefWidth="622.0" />
+    </children>
+
+</AnchorPane>

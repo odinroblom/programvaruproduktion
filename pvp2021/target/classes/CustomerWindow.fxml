@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<AnchorPane id="AnchorPane" prefHeight="305.0" prefWidth="439.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="frontend.controllers.CustomerController">
+    <children>
+        <Label layoutX="22.0" layoutY="239.0" text="Total Sum:" />
+        <Label fx:id="totalSumCustomer" layoutX="91.0" layoutY="239.0" text="0  €" />
+        <TableView fx:id="shoppingCartCustomer" prefHeight="228.0" prefWidth="439.0">
+            <columns>
+                <TableColumn fx:id="itemNameCustomer" prefWidth="271.0" text="Item" />
+                <TableColumn fx:id="itemQuantityCustomer" prefWidth="85.0" text="Qty" />
+                <TableColumn fx:id="itemPriceCustomer" prefWidth="82.0" text="€" />
+            </columns>
+        </TableView>
+      <Label fx:id="transactionMessageCustomer" layoutX="22.0" layoutY="264.0" prefHeight="30.0" prefWidth="279.0" textAlignment="CENTER">
+         <font>
+            <Font size="20.0" />
+         </font></Label>
+      <Label fx:id="returnCashMessageCustomer" layoutX="230.0" layoutY="239.0" prefHeight="17.0" prefWidth="194.0" text="Return to customer: 0 €" />
+    </children>
+</AnchorPane>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import java.lang.String?>
+<AnchorPane id="AnchorPane" prefHeight="505.0" prefWidth="1252.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="frontend.controllers.MarketingController">
+    <children>
+        <Label layoutX="25.0" layoutY="65.0" text="From:" />
+        <Label layoutX="195.0" layoutY="65.0" text="To:" />
+        <TextField fx:id="timeFrom" layoutX="25.0" layoutY="91.0" />
+        <TextField fx:id="timeTo" layoutX="195.0" layoutY="91.0" />
+        <Label layoutX="26.0" layoutY="174.0" prefWidth="76.0" text="From:" />
+        <Label layoutX="196.0" layoutY="174.0" text="To:" />
+        <TextField fx:id="buyerBirthdayFrom" layoutX="25.0" layoutY="199.0" />
+        <TextField fx:id="buyerBirthdayTo" layoutX="194.0" layoutY="199.0" />
+        <Label layoutX="28.0" layoutY="264.0" text="Buyer Sex">
+            <font>
+                <Font size="18.0" />
+            </font></Label>
+        <ComboBox fx:id="customerSex" layoutX="27.0" layoutY="293.0" prefWidth="150.0">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="ANY" />
+                    <String fx:value="MALE" />
+                    <String fx:value="FEMALE" />
+                </FXCollections>
+            </items>
+            <value>
+                <String fx:value="ANY" />
+            </value>
+        </ComboBox>
+        <Label layoutX="26.0" layoutY="38.0" text="Sale Time Period">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <Label layoutX="26.0" layoutY="147.0" text="Buyer Birthday Between">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <TableView fx:id="saleRegister" layoutX="363.0" layoutY="25.0" prefHeight="399.0" prefWidth="358.0">
+            <columns>
+                <TableColumn fx:id="barCode" prefWidth="85.0" text="Barcode" />
+                <TableColumn fx:id="amount" prefWidth="85.0" text="Qty" />
+            </columns>
+        </TableView>
+        <Button fx:id="loadButton" layoutX="28.0" layoutY="405.0" mnemonicParsing="false" onAction="#loadButton" prefHeight="51.0" prefWidth="149.0" text="Load">
+            <font>
+                <Font size="24.0" />
+            </font>
+        </Button>
+        <Label fx:id="errorMessage" layoutX="50.0" layoutY="360.0" text="" />
+      <BarChart fx:id="barChart" layoutX="741.0" layoutY="25.0">
+        <xAxis>
+          <CategoryAxis fx:id="categoryAxis" side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis fx:id="numberAxis" side="LEFT" />
+        </yAxis>
+      </BarChart>
+      <Button layoutX="194.0" layoutY="405.0" mnemonicParsing="false" onAction="#clearChart" prefHeight="51.0" prefWidth="76.0" text="Clear Chart" />
+    </children>
+</AnchorPane>
